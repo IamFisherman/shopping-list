@@ -14,14 +14,14 @@ button.addEventListener("click", function() {
         // check
         const inputCheck = document.createElement("input");
         inputCheck.setAttribute("type", "checkbox");
-        inputCheck.setAttribute("id", "check");
+        inputCheck.setAttribute("class", "check");
         // p item
         const p = document.createElement("p");
         p.innerHTML = itemAdded.value;
         // input price
         const inputPrice = document.createElement("input");
         inputPrice.setAttribute("type", "number");
-        inputPrice.setAttribute("id", "price");
+        inputPrice.setAttribute("class", "price");
         inputPrice.setAttribute("placeholder", "0.00");
 
         // delete button
@@ -30,7 +30,7 @@ button.addEventListener("click", function() {
         const SVG_NS = "http://www.w3.org/2000/svg";
         const svg = document.createElementNS(SVG_NS, "svg");
         svg.setAttributeNS(null, "version", "1.1");
-        svg.setAttributeNS(null, "id", "Layer_1");
+        svg.setAttributeNS(null, "class", "deleteIcon");
         svg.setAttributeNS(null, "x", "0px");
         svg.setAttributeNS(null, "y", "0px");
         svg.setAttributeNS(null, "width", "16");
