@@ -12,6 +12,8 @@
 
 body {
     width: 100%;
+
+    position: relative;
 }
 
 /* -------- H1 -------- */
@@ -182,4 +184,37 @@ input::-webkit-inner-spin-button {
 .deleteIcon {
     width: 60%;
     height: 60%;
+}
+
+/* -------- TOTAL -------- */
+
+/* main div */
+#totalSavingDiv {
+    width: 100%;
+    background-color: var(--blue);
+    padding: 20px 0 40px 0;
+    border-radius: 20px 20px 0 0;
+
+    position: fixed;
+    bottom: 0;
+}
+
+#totalDiv, #savingTitle {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#totalDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    font-size: 12px;
+    color: white;
+}
+
+#savingTitle {
+    text-align: end;
+    color: white;
+    font-size: 12px;
 }
