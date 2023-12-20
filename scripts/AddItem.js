@@ -110,30 +110,22 @@ button.addEventListener("click", function() {
 function updateTotalPrice() {
     const prices = document.querySelectorAll(".price");
 
-prices.forEach(price => {
-    price.addEventListener("change", calculatePrice)
-})
-
-
-
+    prices.forEach(price => {
+        price.addEventListener("change", calculatePrice)
+    })
 }
 
 function calculatePrice() {
     const prices = document.querySelectorAll(".price");
-const totalPriceElement = document.querySelector("#total");
+    const totalPriceElement = document.querySelector("#total");
 
 
-        let total = 0;
+    let total = 0;
 
     prices.forEach(price => {
-
         if (price.value != "") {
             total += parseFloat(price.value);
         }
-    
-        
-    
-        
     });
 
     totalPriceElement.innerHTML = total.toFixed(2);
