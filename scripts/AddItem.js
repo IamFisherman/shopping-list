@@ -3,6 +3,8 @@ const itemAdded = document.querySelector("#itemAdded");
 const button = document.querySelector("#itemAddButton");
 const list = document.querySelector("#listItems");
 
+
+
 button.addEventListener("click", function() {
 
     if (itemAdded.value != "") {
@@ -91,10 +93,52 @@ button.addEventListener("click", function() {
         // delete button function
         deleteButton.addEventListener("click", function() {
             list.removeChild(li);
+
+            calculatePrice();
+    
         })
+
+        updateTotalPrice();
+        
     }
     else {
-        window.alert("You don't have entered an item! Please enter an item.");
+        window.alert("You don't have entered an item! Please enter one.");
     }
 
 });
+
+function updateTotalPrice() {
+    const prices = document.querySelectorAll(".price");
+
+prices.forEach(price => {
+    price.addEventListener("change", calculatePrice)
+})
+
+
+
+}
+
+function calculatePrice() {
+    const prices = document.querySelectorAll(".price");
+const totalPriceElement = document.querySelector("#total");
+
+
+        let total = 0;
+
+    prices.forEach(price => {
+
+        if (price.value != "") {
+            total += parseFloat(price.value);
+        }
+    
+        
+    
+        
+    });
+
+    totalPriceElement.innerHTML = total.toFixed(2);
+}
+
+updateTotalPrice();
+
+
