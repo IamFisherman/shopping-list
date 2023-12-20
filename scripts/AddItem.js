@@ -21,6 +21,7 @@ button.addEventListener("click", function() {
         const inputCheck = document.createElement("input");
         inputCheck.setAttribute("type", "checkbox");
         inputCheck.setAttribute("class", "check");
+        inputCheck.setAttribute("data-price", "1.00");
         // p item
         const p = document.createElement("p");
         p.classList.add("itemP");
