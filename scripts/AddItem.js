@@ -83,6 +83,17 @@ button.addEventListener("click", function() {
         li.append(deleteButton);
 
         list.append(li);
+
+        // aria label to browser readers
+        deleteButton.ariaLabel = "Delete Item";
+
+        // delete button function
+        deleteButton.addEventListener("click", function() {
+            list.removeChild(li);
+        })
+    }
+    else {
+        window.alert("You don't have entered an item! Please enter an item.");
     }
 
 });
