@@ -2,6 +2,7 @@
 
 * {
     font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box; /* to input boxes don't overflow from their containers */
 }
 
 :root {
@@ -38,12 +39,19 @@ body {
 /* budget */
 #budget {
     width: 100%;
-    padding: 15px 0;
+    padding: 15px 20px;
     font-size: 12px;
     font-weight: 700;
     border-radius: 12px;
     border: none;
     background-color: var(--gray);
+}
+
+/* delete arrows in input number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* add item input */
@@ -59,7 +67,7 @@ body {
 #itemAdded {
     width: 82%;
 
-    padding: 15px 0;
+    padding: 15px 20px;
     font-size: 12px;
     font-weight: 700;
     border-radius: 12px;
@@ -86,10 +94,13 @@ body {
     margin-top: 50px;
 }
 
+
+
 .item {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 15px;
 }
 
 .itemP {
