@@ -97,8 +97,6 @@ input::-webkit-inner-spin-button {
     margin-bottom: 180px;
 }
 
-
-
 .item {
     display: flex;
     flex-direction: row;
@@ -109,6 +107,10 @@ input::-webkit-inner-spin-button {
 .itemP {
     margin-left: 8px;
     padding: 5px 0;
+}
+
+.itemP.checked {
+    text-decoration-line: line-through;
 }
 
 .itemDiv {

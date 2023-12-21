@@ -26,7 +26,6 @@ button.addEventListener("click", function() {
         const inputCheck = document.createElement("input");
         inputCheck.setAttribute("type", "checkbox");
         inputCheck.setAttribute("class", "check");
-        inputCheck.setAttribute("data-price", "1.00");
         // p item
         const p = document.createElement("p");
         p.classList.add("itemP");
@@ -183,6 +182,18 @@ function deleteItem() {
     })
     
 } 
+
+function checkItem() {
+    const checkboxes = document.querySelectorAll(".check");
+
+    checkboxes.forEach(check => {
+        check.addEventListener("change", function() {
+            check.nextElementSibling.classList.toggle("checked");
+        })
+    })
+}
+
+checkItem();
 
 deleteItem();
 
