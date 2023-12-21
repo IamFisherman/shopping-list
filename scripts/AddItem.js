@@ -142,7 +142,7 @@ function calculatePrice() {
         totalSavingDiv.style.backgroundColor = "#ff5757";
     }
     else if (total > parseFloat(budget.value) * 0.95) {
-        totalSavingDiv.style.backgroundColor = "#f18b11";
+        totalSavingDiv.style.backgroundColor = "#ff914d";
     }
     else if (total < parseFloat(budget.value)) {
         totalSavingDiv.style.backgroundColor = "#008444";
