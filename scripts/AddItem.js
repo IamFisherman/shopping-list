@@ -90,6 +90,9 @@ button.addEventListener("click", function() {
 
         list.append(li);
 
+        itemAdded.value = "";
+        divMain.focus();
+
         // aria label to browser readers
         deleteButton.ariaLabel = "Delete Item";
 
@@ -162,6 +165,7 @@ function calculateSaving(total) {
         }
     }
     else if (budget.value == "") {
+        totalSavingDiv.style.backgroundColor = "#0097b2";
         saving.innerHTML = "";
     }
 
