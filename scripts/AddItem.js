@@ -92,6 +92,8 @@ button.addEventListener("click", function() {
         // delete item name after added
         itemAdded.value = "";
 
+        
+
         // aria label to browser readers
         deleteButton.ariaLabel = "Delete Item";
 
@@ -102,6 +104,8 @@ button.addEventListener("click", function() {
             calculatePrice();
         })
 
+        
+        
         updateTotalPrice();
         
     }
@@ -183,17 +187,18 @@ function deleteItem() {
     
 } 
 
-function checkItem() {
-    const checkboxes = document.querySelectorAll(".check");
+// THIS NEXT FUNCTION WORKS, BUT IT IS NOT NEEDS IN THIS CASE
+// function checkItem() {
+//     const checkboxes = document.querySelectorAll(".check");
 
-    checkboxes.forEach(check => {
-        check.addEventListener("change", function() {
-            check.nextElementSibling.classList.toggle("checked");
-        })
-    })
-}
+//     checkboxes.forEach(check => {
+//         check.addEventListener("change", function() {
+//             check.nextElementSibling.classList.toggle("checked");
+//         })
+//     })
+// }
 
-checkItem();
+// checkItem();
 
 deleteItem();
 

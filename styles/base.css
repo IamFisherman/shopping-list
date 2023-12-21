@@ -109,8 +109,14 @@ input::-webkit-inner-spin-button {
     padding: 5px 0;
 }
 
-.itemP.checked {
+/* .itemP.checked {
     text-decoration-line: line-through;
+    color: gray;
+} */
+
+.check:checked + .itemP {
+    text-decoration-line: line-through;
+    color: gray;
 }
 
 .itemDiv {
