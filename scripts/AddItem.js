@@ -88,7 +88,7 @@ button.addEventListener("click", function() {
         li.append(divMain);
         li.append(deleteButton);
 
-        list.append(li);
+        list.appendChild(li);
 
         // delete item name after added
         itemAdded.value = "";
