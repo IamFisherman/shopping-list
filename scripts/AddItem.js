@@ -115,6 +115,9 @@ function updateTotalPrice() {
     prices.forEach(price => {
         price.addEventListener("change", calculatePrice)
     })
+
+    budget.addEventListener("change", calculateSaving);
+    budget.addEventListener("change", calculatePrice);
 }
 
 function calculatePrice() {
@@ -132,24 +135,36 @@ function calculatePrice() {
 
     totalPriceElement.innerHTML = total.toFixed(2);
 
-    // const warnedPrice = parseFloat(budget.value) - 5;
+    calculateSaving(total);
+
+    
+}
+
+function calculateSaving(total) {
 
     // saving
     let moneySaved = parseFloat(budget.value) - total;
-    saving.innerHTML = moneySaved.toFixed(2);
 
-    if (total > parseFloat(budget.value)) {
-        totalSavingDiv.style.backgroundColor = "#ff5757";
-    }
-    else if (total > parseFloat(budget.value) * 0.95) {
-        totalSavingDiv.style.backgroundColor = "#ff914d";
-    }
-    else if (total < parseFloat(budget.value)) {
-        totalSavingDiv.style.backgroundColor = "#008444";
-    }
+   
     
-    
-    
+    if (budget.value != "") {
+        if (total > parseFloat(budget.value)) {
+            totalSavingDiv.style.backgroundColor = "#ff5757";
+            saving.innerHTML = `Owing R$ ${moneySaved.toFixed(2)}`;
+        }
+        else if (total > parseFloat(budget.value) * 0.95) {
+            totalSavingDiv.style.backgroundColor = "#ff914d";
+            saving.innerHTML = `Saving R$ ${moneySaved.toFixed(2)}`;
+        }
+        else if (total < parseFloat(budget.value)) {
+            totalSavingDiv.style.backgroundColor = "#008444";
+            saving.innerHTML = `Saving R$ ${moneySaved.toFixed(2)}`;
+        }
+    }
+    else if (budget.value == "") {
+        saving.innerHTML = "";
+    }
+
 }
 
 updateTotalPrice();

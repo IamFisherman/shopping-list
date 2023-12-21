@@ -217,4 +217,5 @@ input::-webkit-inner-spin-button {
     text-align: end;
     color: white;
     font-size: 12px;
+    font-weight: 600;
 }
