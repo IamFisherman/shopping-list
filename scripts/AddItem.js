@@ -171,6 +171,21 @@ function calculateSaving(total) {
 
 }
 
+function deleteItem() {
+    const deleteButtons = document.querySelectorAll(".deleteButton");
+
+    deleteButtons.forEach(deleteButton => {
+        deleteButton.addEventListener("click", function() {
+            list.removeChild(deleteButton.parentElement);
+    
+            calculatePrice();
+        })
+    })
+    
+} 
+
+deleteItem();
+
 updateTotalPrice();
 
 
