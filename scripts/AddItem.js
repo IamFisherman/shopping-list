@@ -90,8 +90,8 @@ button.addEventListener("click", function() {
 
         list.append(li);
 
+        // delete item name after added
         itemAdded.value = "";
-        divMain.focus();
 
         // aria label to browser readers
         deleteButton.ariaLabel = "Delete Item";
