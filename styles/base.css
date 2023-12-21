@@ -14,7 +14,7 @@ body {
     width: 100%;
 
     position: relative;
-    overscroll-behavior: contain;
+    overscroll-behavior: contain; /* to avoid reload in moviles */
 }
 
 /* -------- H1 -------- */
