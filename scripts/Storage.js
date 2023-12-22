@@ -8,11 +8,51 @@ const list = document.querySelector("#listItems");
 
 updateTotalPrice();
 
-let itemsArray = getItemList() || [];
+// const pricesList = getPricesList() || [];
 
+let itemsArray = getItemList() || [];
 itemsArray.forEach(item => {
     displayList(item);
 });
+
+
+
+// function createPriceList() {
+    
+//     const prices = document.querySelectorAll(".price");
+//     pricesList.splice(0, pricesList.length);
+
+
+//     prices.forEach(price => {
+
+//         pricesList.forEach(i => {
+//             price.setAttribute("value", i);
+//         })
+        
+//         if (price.value == "") {
+//             pricesList.push("0.00");
+//         }
+//         else {
+//             pricesList.push(price.value);
+//         } 
+
+        
+//     })
+
+//     localStorage.setItem('myArray', JSON.stringify(pricesList));
+//     calculatePrice();
+//     console.log(pricesList);
+    
+// }
+
+// function getPricesList() {
+//     return JSON.parse(localStorage.getItem('myArray'));
+// }
+
+// createPriceList();
+
+
+
 
 button.addEventListener("click", function() {
     if (itemAdded.value != "")
@@ -21,6 +61,7 @@ button.addEventListener("click", function() {
         itemsArray.push(itemAdded.value);
 
         setItemList();
+        // createPriceList();
 
         itemAdded.value = "";
     }
@@ -63,6 +104,7 @@ function displayList(item)
     inputPrice.setAttribute("type", "number");
     inputPrice.setAttribute("class", "price");
     inputPrice.setAttribute("placeholder", "0.00");
+    
 
     // delete button
     const deleteButton = document.createElement("button");
@@ -149,7 +191,8 @@ function updateTotalPrice() {
     const prices = document.querySelectorAll(".price");
 
     prices.forEach(price => {
-        price.addEventListener("change", calculatePrice)
+        price.addEventListener("change", calculatePrice);
+        // price.addEventListener("change", createPriceList);
     })
 
     budget.addEventListener("change", calculateSaving);
