@@ -265,8 +265,6 @@ function showImgNoItems() {
     else if (itemsArray.length >= 1) {
         imgItemsDiv.classList.remove("show");
     }
-
-    console.log(itemsArray.length);
 }
 
 showImgNoItems();
