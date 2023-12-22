@@ -5,6 +5,8 @@ const itemAdded = document.querySelector("#itemAdded");
 const button = document.querySelector("#itemAddButton");
 const list = document.querySelector("#listItems");
 
+const imgItemsDiv = document.querySelector("#imgItems");
+
 updateTotalPrice();
 
 // const pricesList = getPricesList() || [];
@@ -12,6 +14,7 @@ updateTotalPrice();
 let itemsArray = getItemList() || [];
 itemsArray.forEach(item => {
     displayList(item);
+    
 });
 
 
@@ -160,11 +163,14 @@ function displayList(item)
         list.removeChild(li);
         deleteItemSelected(p.innerHTML);
         calculatePrice();
+        showImgNoItems();
 
         
     })
 
     
+
+    imgItemsDiv.classList.remove("show");
     
     updateTotalPrice();
 }
@@ -251,6 +257,24 @@ function calculateSaving(total) {
     }
 
 }
+
+function showImgNoItems() {
+    if (itemsArray.length == 0) {
+        imgItemsDiv.classList.add("show");
+    }
+    else if (itemsArray.length >= 1) {
+        imgItemsDiv.classList.remove("show");
+    }
+
+    console.log(itemsArray.length);
+}
+
+showImgNoItems();
+
+
+
+
+
 
 
 

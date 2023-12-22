@@ -239,6 +239,33 @@ input::-webkit-inner-spin-button {
     height: 50%;
 }
 
+/* -------- IMAGE NO ITEMS -------- */
+#imgItems.show {
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 60px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#shoppingListImage {
+    width: 120px;
+}
+
+#textNoItems {
+    width: 200px;
+    text-align: center;
+    color: #737373;
+}
+
+#imgItems {
+    display: none;
+}
+
+
+
 /* -------- TOTAL -------- */
 
 /* main div */
