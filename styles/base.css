@@ -136,20 +136,21 @@ input::-webkit-inner-spin-button {
     margin-left: 15px;
 }
 
-.check {
+/* .check {
     appearance: none;
     width: 16px;
     height: 16px;
     border: 2px solid gray;
     border-radius: 5px;
-}
+    background-color: rgba(0, 0, 0, 0);
+} */
 
-.check:checked {
-    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-    background-color: var(--blue);
-    border-color: var(--blue);
+/* .check:checked {
     
-}
+    background: transparent url('../images/svg/plus-icon.svg') no-repeat 0 0;
+    
+
+} */
 
 .priceDiv {
     width: 30%;
@@ -157,7 +158,7 @@ input::-webkit-inner-spin-button {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-right: 15px;
+    margin-right: 6px;
 }
 
 .money {
