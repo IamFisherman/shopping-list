@@ -238,16 +238,19 @@ function calculateSaving(total) {
             totalPriceElement.style.backgroundColor = "#ff5757";
             totalPriceElement.style.color = "#fff";
             saving.innerHTML = `Owing R$ ${moneySaved.toFixed(2)}`;
+            saving.style.color = "#ff5757";
         }
         else if (total > parseFloat(budget.value) * 0.95) {
-            totalPriceElement.style.backgroundColor = "#ff914d";
+            totalPriceElement.style.backgroundColor = "#f08900";
             totalPriceElement.style.color = "#fff";
             saving.innerHTML = `Saving R$ ${moneySaved.toFixed(2)}`;
+            saving.style.color = "#f08900";
         }
         else if (total < parseFloat(budget.value)) {
             totalPriceElement.style.backgroundColor = "#008444";
             totalPriceElement.style.color = "#fff";
             saving.innerHTML = `Saving R$ ${moneySaved.toFixed(2)}`;
+            saving.style.color = "#008444";
         }
     }
     else if (budget.value == "") {
