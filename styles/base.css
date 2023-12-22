@@ -255,7 +255,8 @@ input::-webkit-inner-spin-button {
 }
 
 #textNoItems {
-    width: 200px;
+    font-size: 12px;
+    width: 210px;
     text-align: center;
     color: #737373;
 }
