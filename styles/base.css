@@ -259,6 +259,7 @@ input::-webkit-inner-spin-button {
     width: 210px;
     text-align: center;
     color: #737373;
+    font-weight: 600;
 }
 
 #imgItems {

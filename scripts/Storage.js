@@ -57,17 +57,25 @@ itemsArray.forEach(item => {
 
 
 button.addEventListener("click", function() {
+    const repited = false;
+
     if (itemAdded.value != "")
     {
-        displayList(itemAdded.value);
+        if (itemsArray.includes(itemAdded.value)) {
+            window.alert("This item is in the list already.");
+        }
+        else {
+            displayList(itemAdded.value);
         itemsArray.push(itemAdded.value);
-
+    
         setItemList();
         // createPriceList();
-
+    
         itemAdded.value = "";
+        }
     }
-    else {
+    else
+    {
         window.alert("You don't have entered an item! Please enter one.");
     }
 })
