@@ -137,6 +137,7 @@ input::-webkit-inner-spin-button {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 .itemP {
@@ -219,7 +220,7 @@ input::-webkit-inner-spin-button {
 }
 
 .deleteButton {
-    width: 15%;
+    width: 24px;
     border: none;
     background-color: rgba(0, 0, 0, 0);
 
@@ -233,8 +234,9 @@ input::-webkit-inner-spin-button {
 }
 
 .deleteIcon {
-    width: 50%;
-    height: 50%;
+    margin: 5px .5px;
+    width: 24px;
+    height: 24px;
 }
 
 /* -------- IMAGE NO ITEMS -------- */
