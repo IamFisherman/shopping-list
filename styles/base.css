@@ -16,14 +16,11 @@ body {
     width: 100%;
 
     position: relative;
-    overscroll-behavior: contain; /* to avoid reload in moviles */
-
-    
+    overscroll-behavior: contain; /* to avoid reload in moviles when scroll down */
 }
 
-/* -------- H1 -------- */
+/* -------- HEADER -------- */
 #header {
-    
     background-color: var(--yellow);
     padding-bottom: 15px;
 }
@@ -36,7 +33,6 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-
 }
 
 #mainTitle {
@@ -65,7 +61,6 @@ body {
     background-color: white;
 }
 
-/* main inputs (budget and items) */
 #mainInputsDiv {
     width: 85%;
     margin: 0 auto;
@@ -110,9 +105,9 @@ input::-webkit-inner-spin-button {
     border: none;
     background-color: var(--gray);
 }
+
 /* add button */
 #itemAddButton {
-
     border-radius: 50px;
     border: none;
     background-color: var(--yellow);
@@ -149,15 +144,10 @@ input::-webkit-inner-spin-button {
     padding: 5px 0;
 }
 
-/* .itemP.checked {
-    text-decoration-line: line-through;
-    color: gray;
-} */
-
 .check:checked + .itemP {
     text-decoration-line: line-through;
     color: gray;
-}
+} /* when check is checked, the item name will have a line through */
 
 .itemDiv {
     display: flex;
@@ -186,10 +176,7 @@ input::-webkit-inner-spin-button {
 } */
 
 /* .check:checked {
-    
     background: transparent url('../images/svg/plus-icon.svg') no-repeat 0 0;
-    
-
 } */
 
 .priceDiv {
@@ -266,11 +253,7 @@ input::-webkit-inner-spin-button {
     display: none;
 }
 
-
-
 /* -------- TOTAL -------- */
-
-/* main div */
 #totalSavingDiv {
     width: 100%;
     background-color: white;
@@ -297,7 +280,6 @@ input::-webkit-inner-spin-button {
 
     font-size: 12px;
     color: var(--dark-gray);
-
 }
 
 #totalTitle, #total {
