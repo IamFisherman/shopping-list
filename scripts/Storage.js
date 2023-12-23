@@ -1,23 +1,25 @@
-const budget = document.querySelector("#budget");
-const saving = document.querySelector("#saving");
+// instance the html elements we need
+const budget = document.querySelector("#budget"); // budget input
 
-const itemAdded = document.querySelector("#itemAdded");
-const button = document.querySelector("#itemAddButton");
-const list = document.querySelector("#listItems");
+const itemAdded = document.querySelector("#itemAdded"); // add item input
+const button = document.querySelector("#itemAddButton"); // add item button
+const list = document.querySelector("#listItems"); // list of items
 
-const imgItemsDiv = document.querySelector("#imgItems");
+const imgItemsDiv = document.querySelector("#imgItems"); // div there are no items
 
-updateTotalPrice();
+const saving = document.querySelector("#saving"); // saving text
+
+updateTotalPrice(); // update total price when open the page
 
 // const pricesList = getPricesList() || [];
 
+// items array
 let itemsArray = getItemList() || [];
 itemsArray.forEach(item => {
     displayList(item);
-    
-});
+}); 
 
-
+// THIS NEXT CODE IS A CODE THAT NEEDS TO BE IMPROVED...
 
 // function createPriceList() {
     
@@ -53,33 +55,34 @@ itemsArray.forEach(item => {
 
 // createPriceList();
 
-
-
-
+// ************ ADD AN ITEM ************ //
 button.addEventListener("click", function() {
 
-    if (itemAdded.value != "")
+    if (itemAdded.value != "") // if item input is not empty
     {
-        if (itemsArray.includes(itemAdded.value)) {
-            window.alert("This item is in the list already.");
+        if (itemsArray.includes(itemAdded.value)) // if item added is in the actual list
+        {
+            window.alert("This item is in the list already."); // message
         }
-        else {
-            displayList(itemAdded.value);
-            itemsArray.push(itemAdded.value);
+        else // if item added is NOT in the actual list
+        {
+            displayList(itemAdded.value); // create the item (li) and add it to list (ul)
+            itemsArray.push(itemAdded.value); // add new item to item array
         
-            setItemList();
+            setItemList(); // create a data local storage
             // createPriceList();
         
-            itemAdded.value = "";
+            itemAdded.value = ""; // clear add item input
         }
     }
-    else
+    else // if item input is empty
     {
-        window.alert("You don't have entered an item! Please enter one.");
+        window.alert("You don't have entered an item! Please enter one."); // message
     }
-    
+
 })
 
+// ****** CREATE ITEM (li) AND ADD IT TO LIST (ul) ****** //
 function displayList(item)
 {
     // li
@@ -114,7 +117,6 @@ function displayList(item)
     inputPrice.setAttribute("type", "number");
     inputPrice.setAttribute("class", "price");
     inputPrice.setAttribute("placeholder", "0.00");
-    
 
     // delete button
     const deleteButton = document.createElement("button");
@@ -161,38 +163,35 @@ function displayList(item)
 
     list.appendChild(li);
 
-    
-
     // aria label to browser readers
     deleteButton.ariaLabel = "Delete Item";
 
     // delete button function
     deleteButton.addEventListener("click", function() {
-        list.removeChild(li);
-        deleteItemSelected(p.innerHTML);
-        calculatePrice();
-        showImgNoItems();
-
-        
+        list.removeChild(li); // delete li
+        deleteItemSelected(p.innerHTML); // delete item in local storage
+        calculatePrice(); // update total price
+        showImgNoItems(); // verify if list is empty to show the image "there are no items"
     })
 
+    imgItemsDiv.classList.remove("show"); // every time that adding an item, the image "there are no items" will not be show 
     
-
-    imgItemsDiv.classList.remove("show");
-    
-    updateTotalPrice();
+    updateTotalPrice(); // update total price
 }
 
+// ******* CREATE LOCAL STORAGE ******* //
 function setItemList()
 {
     localStorage.setItem("myItemsList", JSON.stringify(itemsArray));
 }
 
+// ******* GET LOCAL STORAGE ******* //
 function getItemList()
 {
     return JSON.parse(localStorage.getItem("myItemsList"));
 }
 
+// ******* DELETE ITEM IN LOCAL STORAGE ******* //
 function deleteItemSelected(chapter)
 {
     // chapter = chapter.slice(0, chapter.length - 1);
@@ -200,7 +199,9 @@ function deleteItemSelected(chapter)
     setItemList();
 }
 
-function updateTotalPrice() {
+// ******* UPDATE TOTAL PRICE ******* //
+function updateTotalPrice() 
+{
     const prices = document.querySelectorAll(".price");
 
     prices.forEach(price => {
@@ -212,10 +213,11 @@ function updateTotalPrice() {
     budget.addEventListener("change", calculatePrice);
 }
 
-function calculatePrice() {
+// ******* CALCULATE TOTAL PRICE ******* //
+function calculatePrice() 
+{
     const prices = document.querySelectorAll(".price");
     const totalPriceElement = document.querySelector("#total");
-
 
     let total = 0;
 
@@ -228,19 +230,16 @@ function calculatePrice() {
     totalPriceElement.innerHTML = `R$ ${total.toFixed(2)}`;
 
     calculateSaving(total);
-
-    
 }
 
-function calculateSaving(total) {
-
+// ******* CALCULATE SAVING ******* //
+function calculateSaving(total) 
+{
     // saving
     let moneySaved = parseFloat(budget.value) - total;
 
     const totalPriceElement = document.querySelector("#total");
 
-   
-    
     if (budget.value != "") {
         if (total > parseFloat(budget.value)) {
             totalPriceElement.style.backgroundColor = "#ff5757";
@@ -266,9 +265,9 @@ function calculateSaving(total) {
         totalPriceElement.style.color = "#3b3b3b";
         saving.innerHTML = "";
     }
-
 }
 
+// ******* SHOW IMG NO ITEMS ******* //
 function showImgNoItems() {
     if (itemsArray.length == 0) {
         imgItemsDiv.classList.add("show");
@@ -278,12 +277,4 @@ function showImgNoItems() {
     }
 }
 
-showImgNoItems();
-
-
-
-
-
-
-
-
+showImgNoItems(); // verify if list is empty to show the image "there are no items"
