@@ -57,7 +57,6 @@ itemsArray.forEach(item => {
 
 
 button.addEventListener("click", function() {
-    const repited = false;
 
     if (itemAdded.value != "")
     {
@@ -66,18 +65,19 @@ button.addEventListener("click", function() {
         }
         else {
             displayList(itemAdded.value);
-        itemsArray.push(itemAdded.value);
-    
-        setItemList();
-        // createPriceList();
-    
-        itemAdded.value = "";
+            itemsArray.push(itemAdded.value);
+        
+            setItemList();
+            // createPriceList();
+        
+            itemAdded.value = "";
         }
     }
     else
     {
         window.alert("You don't have entered an item! Please enter one.");
     }
+    
 })
 
 function displayList(item)
