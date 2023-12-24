@@ -370,7 +370,11 @@ html.dark {
     display: block;
 }
 
-#budget.dark::placeholder, #itemAdded.dark::placeholder, .price.dark::placeholder, #textNoItems.dark, #totalTitle.dark {
+#budget.dark::placeholder, #itemAdded.dark::placeholder, .price.dark::placeholder, #textNoItems.dark  {
+    color: gray;
+}
+
+#totalTitle.dark {
     color: var(--dark-font);
 }
 
