@@ -245,6 +245,9 @@ function calculateSaving(total)
     // saving
     let moneySaved = parseFloat(budget.value) - total;
 
+    // saving when dark mode
+    let savingWhenDark = document.querySelector("#saving.dark")
+
     const totalPriceElement = document.querySelector("#total");
 
     if (budget.value != "") {
@@ -253,18 +256,21 @@ function calculateSaving(total)
             totalPriceElement.style.color = "#fff";
             saving.innerHTML = `Owing R$ ${moneySaved.toFixed(2)}`;
             saving.style.color = "#ff5757";
+            savingWhenDark.style.color = "#d9d9d9"; // saving when dark mode
         }
         else if (total > parseFloat(budget.value) * 0.95) {
             totalPriceElement.style.backgroundColor = "#f08900";
             totalPriceElement.style.color = "#fff";
             saving.innerHTML = `Saving R$ ${moneySaved.toFixed(2)}`;
             saving.style.color = "#f08900";
+            savingWhenDark.style.color = "#d9d9d9"; // saving when dark mode
         }
         else if (total < parseFloat(budget.value)) {
             totalPriceElement.style.backgroundColor = "#008444";
             totalPriceElement.style.color = "#fff";
             saving.innerHTML = `Saving R$ ${moneySaved.toFixed(2)}`;
             saving.style.color = "#008444";
+            savingWhenDark.style.color = "#d9d9d9"; // saving when dark mode
         }
     }
     else if (budget.value == "") {

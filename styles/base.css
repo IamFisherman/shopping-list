@@ -10,6 +10,10 @@
     --gray: #ededed;
     --yellow: #f6ca11;
     --dark-gray: #3b3b3b;
+
+    /* dark mode colors */
+    --darker: #252627;
+    --dark-font: #d9d9d9;
 }
 
 body {
@@ -33,6 +37,15 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+#darkModeButton {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+#darkModeButton:hover {
+    cursor: pointer;
 }
 
 #mainTitle {
@@ -119,10 +132,14 @@ input::-webkit-inner-spin-button {
     margin-right: 10px;
 }
 
-.plusIcon {
+.plusIcon, .plusIconDark {
     margin: 5px .5px;
     width: .7em;
     height: .7em;
+}
+
+.plusIconDark {
+    display: none;
 }
 
 /* -------- LIST -------- */
@@ -131,6 +148,7 @@ input::-webkit-inner-spin-button {
     padding: 0;
     width: 85%;
     margin: 20px auto 150px auto;
+
 }
 
 .item {
@@ -250,8 +268,12 @@ input::-webkit-inner-spin-button {
     align-items: center;
 }
 
-#shoppingListImage {
+#shoppingListImage, #shoppingListImageDark {
     width: 120px;
+}
+
+#shoppingListImageDark {
+    display: none;
 }
 
 #textNoItems {
@@ -314,4 +336,60 @@ input::-webkit-inner-spin-button {
 
     margin-top: 10px;
     padding-right: 1em;
+}
+
+
+
+
+/* ------------------- DARK MODE ------------------- */
+html.dark {
+    background-color: var(--darker);
+}
+
+#main.dark {
+    background-color: var(--darker);
+}
+
+.price.dark {
+    background-color: var(--dark-gray);
+}
+
+#budget.dark, #itemAdded.dark, .price.dark, #totalSavingDiv.dark {
+    background-color: var(--dark-gray);
+}
+
+#budget.dark, #itemAdded.dark {
+    color: var(--dark-font);
+}
+
+.plusIcon.dark {
+    display: none;
+}
+
+.plusIconDark.dark {
+    display: block;
+}
+
+#budget.dark::placeholder, #itemAdded.dark::placeholder, .price.dark::placeholder, #textNoItems.dark, #totalTitle.dark {
+    color: var(--dark-font);
+}
+
+#shoppingListImage.dark {
+    display: none;
+}
+
+#shoppingListImageDark.dark {
+    display: block;
+}
+
+#listItems.dark .item .itemP, #listItems.dark .item .money, #listItems.dark .item .price {
+    color: var(--dark-font);
+}
+
+#listItems.dark .item .price {
+    background-color: var(--dark-gray);
+}
+
+#totalSavingDiv.dark {
+    box-shadow: 0 1px 10px rgb(19, 19, 19);
 }
