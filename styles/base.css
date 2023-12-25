@@ -339,8 +339,6 @@ input::-webkit-inner-spin-button {
 }
 
 
-
-
 /* ------------------- DARK MODE ------------------- */
 html.dark {
     background-color: var(--darker);
